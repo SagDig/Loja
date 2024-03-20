@@ -14,11 +14,11 @@
         <img class="img-style" src="../Imagens/tilápia.jpg" alt="Logo" width="300px" height="300px">
         <div class="from-div">
 
-            <input type="text" placeholder="Insira seu login">
+            <input type="text" placeholder="Insira seu login" id="nome">
 
             <div style="position: relative;">
-                <input type="password" placeholder="Insira sua senha">
-                <span onclick="showPassword()" class="key"></span>
+                <input type="password" placeholder="Insira sua senha" id="senha">
+                <span onclick="showPassword()" class="key">🔑</span>
             </div>
 
             <button onclick="login()">Entrar</button>
@@ -27,7 +27,7 @@
 
     <div class="error-div" id="error-modal">
         <h3>Credenciais incorretos</h3>
-        <button onclick=""></button>
+        <button onclick="fecharModal()">Fechar</button>
     </div>
 </body>
 </html>

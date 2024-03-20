@@ -1,10 +1,10 @@
 const showPassword = () => {
-    varinputSenha = document.querySelector("#senha");
+    var inputSenha = document.querySelector("#senha");
 
-    if(inputSenha.setAttrbute("type" === "password")){
-        inputSenha.setAttrbute("type", "type")
+    if(inputSenha.getAttribute("type" === "password")){
+        inputSenha.setAttribute("type", "text")
     }else{
-        inputSenha.setAttrbute("type", "password")
+        inputSenha.setAttribute("type", "password")
     }
 }
 
@@ -18,7 +18,7 @@ function login(){
             dataEntrada: new Date(),
             id: Math.floor(Math.random() * 1000000)
         } 
-        localStorage.setItem("ususario", JSON.stringify(user))
+        localStorage.setItem("usuario", JSON.stringify(user))
         window.location.href = "../Loja/loja.html"
 
     }else{
@@ -28,3 +28,13 @@ function login(){
 
 const fecharModal = () => document.getElementById('error-modal').style.display = "none"
 
+function formatarData(item){
+    var options = {
+        month: "numeric",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+    }
+    return item.toLocateString("pt-BR", options)
+}
