@@ -1,25 +1,27 @@
 *{
-    margin: 0;
     padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
     width: 100vw;
     height: 100vh;
-    background: rgb(5,28,28);
-    background: linear-gradient(90deg, rgba(5,28,28,1) 0%, rgba(0,99,108,1) 45%, rgba(14,82,96,1) 100%);
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,0.5914740896358543) 0%, rgba(108,9,121,0.4318102240896359) 47%, rgba(2,0,36,0.6502976190476191) 100%);
     overflow-x: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.wrap-Login{
+.wrap-login{
     position: relative;
+    box-shadow: rgba(152, 44, 189, 0.755) 0px 7px 29px 0px;
+    border-radius: 20px;
 }
 
-.from-div{
-    background-color: cadetblue;
+.form-div{
     width: 500px;
     height: 500px;
     padding: 1rem;
@@ -27,38 +29,40 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #ffff;
     border-radius: 20px;
-    border: 12px double black;
+    border: 12px double rgb(139, 36, 162);
     gap: 2vh;
 }
 
 .img-style{
     position: absolute;
     top: -20px;
-    left: 275px;
+    left: 50%;
     transform: translate(-50%, -50%);
-    border: 20px;
-    box-shadow: inset;
+    border-radius: 20px;
+    box-shadow: rgba(152, 44, 189, 0.755) 0px 7px 29px 0px;
 }
 
 input{
-    color: aliceblue;
-    box-shadow: inset;
-    background-color: aqua;
+    color: #ffff;
+    box-shadow: rgba(152, 44, 189, 0.755) 0px 7px 29px 0px;
+    background-color: rgba(137, 43, 226, 0.761);
     border: none;
     padding: 20px 40px;
     border-radius: 999px;
+    font-size: 1.2rem;
 }
 
 input::placeholder{
-    color: antiquewhite;
-    background-color: aqua;
+    color: #ffff;
 }
 
 input:focus{
-    color: antiquewhite;
-    box-shadow: inset;
-    background-color: aqua;
+    color: #ffff;
+    box-shadow: rgba(152, 44, 189, 0.755) 0px 7px 29px 0px;
+    background-color: rgba(137, 43, 226, 0.761);
+
 }
 
 .key{
@@ -76,29 +80,29 @@ input:focus{
 button{
     padding: 10px 40px;
     border: none;
-    background-color: blue;
-    color: black;
-    font-size: 1.2rem;
+    background-color: rgba(46, 6, 83, 0.761);
+    color: rgb(213, 206, 219);
+    font-size: 1.4rem;
     border-radius: 999px;
 }
 
 button:hover{
-    box-shadow: inset;
-    color: aliceblue;
-    cursor: pointer;
+    box-shadow: rgba(17, 9, 20, 0.755) 0px 7px 29px 0px;
+    color: #ffff;
+    cursor:pointer;
 }
 
 .error-div{
     display: none;
     position: absolute;
     bottom: 5%;
-    background-color: rgb(5, 13, 36);
+    background-color: rgba(97, 13, 45, 0.719);
     padding: 2rem;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
     gap: 1vh;
-    box-shadow: inset;
-    color: teal;
+    box-shadow: rgba(17, 9, 20, 0.755) 0px 7px 29px 0px;
+    color: #ffff;
 }

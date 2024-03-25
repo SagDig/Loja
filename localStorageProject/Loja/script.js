@@ -5,27 +5,28 @@ window.onload = function () {
     var user = JSON.parse(storedUser)
 
     document.getElementById("user").textContent = user.name;
-    document.getElementById("perfil").textContent = user.name + "Registro de login" + user.dataEntrada;
+    document.getElementById("perfil").textContent = user.name + " - Registro de login: " + user.dataEntrada;
     document.getElementById("idPerfil").textContent = user.id;
-
 }
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function (){
     fetch("../Dados/loja.json").then((response) => response.json()).then((data) => {
         produtos = data;
         const produtosContainer = document.getElementById("produtos-container");
 
-        produtos.array.forEach((produto, index) => {
+        produtos.forEach((produto, index) => {
             const card = document.createElement("div")
             card.className = "card"
             card.style.width = "18rem"
+            card.style.marginRight = "10px"
             card.style.marginBottom = "10px"
+
 
             const imagem = document.createElement("img")
             imagem.src = produto.imagem
             imagem.className = "card-img-top"
 
-            const cardBody = document.clreateElement("div")
+            const cardBody = document.createElement("div")
             cardBody.className = "card-body"
 
             const cardTitle = document.createElement("h5")
@@ -34,19 +35,19 @@ document.addEventListener("DOMContentLoaded", function(){
 
             const cardText = document.createElement("p")
             cardText.className = "card-text"
-            cardText.textContent = "R$" + produto.preco.toFixed(2)
+            cardText.textContent = "R$ " + produto.preco.toFixed(2)
 
-            const btmAdicionarAocarrinho = document.createElement("a")
-            btmAdicionarAocarrinho.href = "#"
-            btmAdicionarAocarrinho.className = "btn btn-primary btn-adicionar-ao-carrinho"
-            btmAdicionarAocarrinho.textContent = "Adicionar ao carrinho"
-            btmAdicionarAocarrinho.setAttribute("data-indice", index)
+            const btnAdicionarAoCarrinho = document.createElement("a")
+            btnAdicionarAoCarrinho.href = "#"
+            btnAdicionarAoCarrinho.className = "btn btn-primary btn-adicionar-ao-carrinho"
+            btnAdicionarAoCarrinho.textContent = "Adicionar ao carrinho"
+            btnAdicionarAoCarrinho.setAttribute("data-indice", index)
 
-            cardBody.appendchild(cardTitle)
-            cardBody.appendchild(cardText)
-            cardBody.appendchild(btmAdicionarAocarrinho)
+            cardBody.appendChild(cardTitle)
+            cardBody.appendChild(cardText)
+            cardBody.appendChild(btnAdicionarAoCarrinho)
 
-            card.appendchild(imagem)
+            card.appendChild(imagem)
             card.appendChild(cardBody)
 
             produtosContainer.appendChild(card)
@@ -54,4 +55,15 @@ document.addEventListener("DOMContentLoaded", function(){
         });
 
     }).catch((error) => console.error("Erro ao carregar o arquivo JSON", error))
+
+
+    $('#produtos-container').on('click', ".btn-adicionar-ao-carrinho", function () {
+        const indexDoProduto = $(this).data("indice");
+        const produtoSelecionado = produtos[indexDoProduto];
+
+        let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        carrinho.push(produtoSelecionado);
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+        alert("PRODUTO ADICIONADO AO CARRINHO")
+    })
 })

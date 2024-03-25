@@ -2,14 +2,12 @@
     padding: 0;
     margin: 0;
 }
-
 body{
     width: 100vw;
     height: auto;
     overflow-x: hidden;
     padding: 20px;
 }
-
 .wrap{
     display: flex;
     flex-direction: row;
@@ -20,12 +18,10 @@ body{
     flex-wrap: wrap;
     padding: 5%;
 }
-
 .idPerfil{
     display: flex;
-    gap: 5%;
+    gap: 5px;
 }
-
 @media (width <= 900px){
     .center{
         display: flex;
